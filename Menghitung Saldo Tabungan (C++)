@@ -1,0 +1,42 @@
+#include <conio>
+#include <iostream>
+
+int main(){
+
+	cout << " Program C++ Menghitung Saldo Tabungan " << endl;
+   cout << " ===================================== " << endl;
+   cout << endl;
+
+   int jml_tab,
+   	durasi,
+   	bunga,
+		total_saldo;
+
+   cout << "Masukkan jumlah tabungan : Rp.";
+   cin >> jml_tab;
+
+   cout << "Lama menabung (bulan) : ";
+   cin >> durasi;
+
+   if(jml_tab < 1000000){
+   	bunga = ((0.01 / 100) * jml_tab) * durasi;
+      total_saldo = jml_tab + bunga;
+   }
+   else if(jml_tab >= 1000000 && jml_tab <= 10000000){
+   	cout << "disini" << endl;
+   	bunga = ((0.1 / 100) * jml_tab) * durasi;
+      total_saldo = jml_tab + bunga;
+   }
+   else{
+   	cout << "harusnya disini" << endl;
+      bunga = ((1.0 / 100) * jml_tab) * durasi;
+      total_saldo = jml_tab + bunga;
+   }
+
+   cout << endl;
+   cout << "=======================================" << endl;
+   cout << "Bunga selama " << durasi << " bulan = Rp." << bunga << ",-" << endl;
+  	cout << "Total saldo tabungan = Rp." << total_saldo << ",-";
+
+   getch();
+}
