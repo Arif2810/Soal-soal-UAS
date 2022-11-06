@@ -3,14 +3,14 @@
 
 int main(){
 
-	cout << " Program C++ Menghitung Saldo Tabungan " << endl;
+   cout << " Program C++ Menghitung Saldo Tabungan " << endl;
    cout << " ===================================== " << endl;
    cout << endl;
 
    int jml_tab,
    	durasi,
    	bunga,
-		total_saldo;
+	total_saldo;
 
    cout << "Masukkan jumlah tabungan : Rp.";
    cin >> jml_tab;
@@ -23,12 +23,10 @@ int main(){
       total_saldo = jml_tab + bunga;
    }
    else if(jml_tab >= 1000000 && jml_tab <= 10000000){
-   	cout << "disini" << endl;
-   	bunga = ((0.1 / 100) * jml_tab) * durasi;
+      bunga = ((0.1 / 100) * jml_tab) * durasi;
       total_saldo = jml_tab + bunga;
    }
    else{
-   	cout << "harusnya disini" << endl;
       bunga = ((1.0 / 100) * jml_tab) * durasi;
       total_saldo = jml_tab + bunga;
    }
