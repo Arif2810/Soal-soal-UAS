@@ -1,0 +1,102 @@
+#include <conio>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+	int
+   	no_rek,
+      bln,
+      m_lalu,
+      m_skr,
+      pemakaian,
+      tarip1 = 0,
+      tarip2 = 0,
+      tarip3 = 0,
+      total,
+      admin = 2500,
+      sewa_meter,
+      total_tag;
+   string nama;
+   char kelas;
+
+   cout << "Masukkan No Rekening : ";
+   cin >> no_rek;
+
+   cout << "Bulan Tagihan : ";
+   cin >> bln;
+
+   cout << "Nama Pelanggan : ";
+   cin >> nama;
+
+   cout << "Kelas Pelanggan 1/2/3 : ";
+   cin >> kelas;
+
+   cout << "Meter Lalu : ";
+   cin >> m_lalu;
+
+   cout << "Meter Sekarang : ";
+   cin >> m_skr;
+
+   pemakaian = m_skr - m_lalu;
+
+   if(pemakaian <= 5){
+   	tarip1 = 5 * 1000;
+   }
+
+   if(pemakaian > 5 && pemakaian <= 10){
+      tarip1 = pemakaian * 1000;
+   }
+
+   if(pemakaian > 10 && pemakaian <= 20){
+   	tarip2 = (pemakaian - 10) * 1500;
+   	tarip1 = 10 * 1000;
+   }
+
+   if(pemakaian > 20){
+   	tarip3 = (pemakaian - 20) * 2000;
+      tarip2 = 10 * 1500;
+      tarip1 = 10 * 1000;
+   }
+
+   total = tarip1 + tarip2 + tarip3;
+
+   if(kelas == '1'){
+   	sewa_meter = 5000;
+   }
+   else if(kelas == '2'){
+   	sewa_meter = 3500;
+   }
+   else if(kelas == '3'){
+   	sewa_meter = 2500;
+   }
+   else{
+   	cout << "Kelas tidak tersedia";
+   }
+
+   total_tag = total + admin + sewa_meter;
+
+   clrscr();
+   cout << "			BUKTI PEMBAYARAN REKENING AIR" << endl;
+   cout << "         PERUSAHAAN DAERAH AIR MINUM KOTA MALANG" << endl;
+   cout << endl;
+   cout << "No Rekening   : " << no_rek << "             Nama Pelanggan : " << nama << endl;
+   cout << "Bulan Tagihan : " << bln << "              Kelas Pelanggan : " << kelas << endl;
+   cout << "=====================================================================" << endl;
+   cout << "Meter   Meter   Pemakaian   Tarip1   Tarip2   Tarip3   Total" << endl;
+   cout << "Lalu    Skr       (M3)" << endl;
+   cout << "=====================================================================" << endl;
+   cout << m_lalu<<"      "<<m_skr<<"      "<<pemakaian<<"     "<<tarip1<<"     "<<tarip2<<"     "<<tarip3<<"     "<<total<<endl;
+   cout << "=====================================================================" << endl;
+   cout << "                                 Biaya Air    RP.        " << total << endl;
+   cout << "                                 Adminstrasi  RP.        " << admin << endl;
+   cout << "                                 Sewa Meter   RP.        " << sewa_meter << endl;
+   cout << "=====================================================================" << endl;
+   cout << "                                 Total Tagihan Rp.       " << total_tag << endl;
+   cout << "                                 ====================================" << endl;
+   cout << endl;
+
+	getch();
+}
