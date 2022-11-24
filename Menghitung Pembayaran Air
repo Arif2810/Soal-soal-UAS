@@ -1,0 +1,52 @@
+#include <conio>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+	string nama;
+	int no_rek, bln, m_lalu, m_skr, pemakaian;
+  char kelas;
+
+   cout << "Masukkan No rekening : ";
+   cin >> no_rek;
+
+   cout << "Bulan Tagihan : ";
+   cin >> bln;
+
+   cout << "Nama pelanggan : ";
+   cin >> nama;
+
+   cout << "Kelas pelanggan 1/2/3: ";
+   cin >> kelas;
+
+   cout << "Meter Lalu : ";
+   cin >> m_lalu;
+
+   cout << "Meter Sekarang : ";
+   cin >> m_skr;
+
+   pemakaian = m_skr - m_lalu;
+
+
+   clrscr();
+   cout << "      			  BUKTI PEMBAYARAN REKENING AIR"     << endl;
+   cout << " 		   PERUSAHAAN DAERAH AIR MINUM KOTA SURABAYA " << endl;
+   cout << endl;
+	 cout << "No Rekening   : " << no_rek << "            " << " Nama Pelanggan : " << nama    << endl;
+   cout << "Bulan Tagihan : " << bln    << "               " << "Kelas Pelanggan : " << kelas << endl;
+   cout << "===========================================================================" << endl;
+   cout << "Meter       Meter     Pemakaian     Tarip 1     Tarip 2    Tarip 3  Total"   << endl;
+   cout << "Lalu        Skr           (M3)"                                              << endl;
+   cout << "===========================================================================" << endl;
+   cout << m_lalu << "         " << m_skr << "          " << pemakaian << endl;
+   cout << "===========================================================================" << endl;
+   cout << endl;
+
+
+
+
+	getch();
+}
