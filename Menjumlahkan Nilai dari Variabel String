@@ -1,0 +1,43 @@
+#include <conio>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+
+	cout << " Program C++ Menjumlahkan Nilai dari Variabel String " << endl;
+   cout << "=====================================================" << endl;
+   cout << endl;
+
+   int n, i, n_2, j, k;
+   string input[100];
+
+   cout << "Input jumlah case : ";
+   cin >> n;
+   cout << endl;
+
+   n_2 = 2 * n;
+   cout << "Input " << n_2 << " nilai (dua variabel setiap case)" << endl;
+
+   // Menyimpan inputan
+   for(i = 0; i < n_2; i++){
+   	cin >> input[i];
+   }
+   clrscr();
+
+   // Menampilkan inputan
+   for(i = 0; i < n_2; i++){
+   	cout << input[i] << " ";
+   }
+   cout << endl;
+   cout << "=====================================================" << endl;
+   k = 0;
+   for(j = 1; j <= n; j++){
+       cout << "Case #" << j << " " << atoi(input[k].c_str()) + atoi(input[k+1].c_str()) << endl;
+       k += 2;
+   }
+
+
+	getch();
+}
